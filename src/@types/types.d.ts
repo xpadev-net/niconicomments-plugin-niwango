@@ -71,7 +71,7 @@ export interface IComment {
   draw: (vpos: number, showCollision: boolean, isDebug: boolean) => void;
 }
 
-declare class Niwango {
+export declare class Niwango {
   constructor(
     targetCanvas: HTMLCanvasElement,
     formattedComments: CommentMapper[]
