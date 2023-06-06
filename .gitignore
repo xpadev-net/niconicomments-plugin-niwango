@@ -1,0 +1,9 @@
+/.idea
+/niconicomments.js.iml
+/node_modules
+/dist
+/.DS_Store
+/docs/type
+/as
+/coverage
+*.iml
