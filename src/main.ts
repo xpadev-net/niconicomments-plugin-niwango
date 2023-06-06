@@ -22,4 +22,8 @@ class NiconicommentsPluginNiwango {
   }
 }
 
-export default NiconicommentsPluginNiwango;
+const wrapper = () => {
+  return NiconicommentsPluginNiwango;
+};
+
+export default wrapper;
