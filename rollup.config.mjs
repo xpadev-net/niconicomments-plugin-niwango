@@ -19,7 +19,7 @@ export default {
     output: {
         file: 'dist/bundle.js',
         format: 'umd',
-        name: 'Niwango',
+        name: 'PluginNiwango',
         banner
     },
     plugins: [
