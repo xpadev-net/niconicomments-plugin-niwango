@@ -1,4 +1,4 @@
-const fs = require("fs");
+import * as fs from "fs";
 
 const processDir = (dir = "./dist/dist/dts", deps = 0) => {
   const files = fs.readdirSync(dir);
