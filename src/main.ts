@@ -14,7 +14,7 @@ class NiconicommentsPluginNiwango {
     this.niwango = new niwango(targetCanvas, comments);
   }
   public draw(vpos: number) {
-    this.niwango.draw(vpos);
+    this.niwango.draw(vpos, false);
   }
 
   public clear() {

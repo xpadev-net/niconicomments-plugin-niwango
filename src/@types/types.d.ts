@@ -76,6 +76,6 @@ export declare class Niwango {
     targetCanvas: HTMLCanvasElement,
     formattedComments: CommentMapper[]
   );
-  draw(vpos: number): void;
+  draw(vpos: number, clear: boolean): void;
   clear(): void;
 }
