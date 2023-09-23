@@ -1,15 +1,13 @@
 import { IComment, Niwango } from "@/@types/types";
 import { CommentMapper } from "@/adapter";
 
+let niwango: typeof Niwango;
+
 class NiconicommentsPluginNiwango {
   niwango: Niwango;
-  constructor(
-    targetCanvas: HTMLCanvasElement,
-    formattedComments: IComment[],
-    niwango: typeof Niwango
-  ) {
-    targetCanvas.width=1920;
-    targetCanvas.height=1080;
+  constructor(targetCanvas: HTMLCanvasElement, formattedComments: IComment[]) {
+    targetCanvas.width = 1920;
+    targetCanvas.height = 1080;
     const comments = formattedComments.map(
       (comment) => new CommentMapper(comment)
     );
@@ -24,7 +22,8 @@ class NiconicommentsPluginNiwango {
   }
 }
 
-const wrapper = () => {
+const wrapper = (_niwango: typeof Niwango) => {
+  niwango = _niwango;
   return NiconicommentsPluginNiwango;
 };
 
