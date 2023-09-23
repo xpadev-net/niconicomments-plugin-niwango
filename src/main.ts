@@ -8,6 +8,8 @@ class NiconicommentsPluginNiwango {
     formattedComments: IComment[],
     niwango: typeof Niwango
   ) {
+    targetCanvas.width=1920;
+    targetCanvas.height=1080;
     const comments = formattedComments.map(
       (comment) => new CommentMapper(comment)
     );
