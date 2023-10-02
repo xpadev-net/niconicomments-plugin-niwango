@@ -31,6 +31,7 @@ export type FormattedCommentWithFont = {
   color: string;
   strokeColor?: string;
   wakuColor?: string;
+  fillColor?: string;
   full: boolean;
   ender: boolean;
   _live: boolean;
@@ -41,6 +42,8 @@ export type FormattedCommentWithFont = {
   flash: boolean;
   lineCount: number;
   lineOffset: number;
+  is_my_post: boolean;
+  button?: ButtonParams;
 };
 export type FormattedCommentWithSize = FormattedCommentWithFont & {
   height: number;
@@ -71,12 +74,25 @@ export interface IComment {
   draw: (vpos: number, showCollision: boolean, isDebug: boolean) => void;
 }
 
+export type ButtonParams = {
+  message: {
+    before: string;
+    body: string;
+    after: string;
+  }; //表示するボタンの内容
+  commentMessage: string; //コメントの内容
+  commentMail: string[]; //コメントのコマンド → 未指定時は色のみ継承
+  commentVisible: boolean; //コメントを投稿するか
+  limit: number; //ボタンの使用上限
+  local: boolean; //ローカルコメントか
+  hidden: boolean; //通常のコメントのように表示するか
+};
+
 export declare class Niwango {
   constructor(
     targetCanvas: HTMLCanvasElement,
-    formattedComments: CommentMapper[]
+    formattedComments: CommentMapper[],
   );
   draw(vpos: number, clear: boolean): void;
-  clear(): void;
   addComments(...newComments: CommentMapper[]): void;
 }

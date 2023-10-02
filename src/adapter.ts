@@ -39,7 +39,7 @@ class CommentMapper {
   }
 
   get isYourPost() {
-    return false;
+    return this.comment.comment.is_my_post;
   }
 
   get mail() {

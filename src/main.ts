@@ -9,7 +9,7 @@ class NiconicommentsPluginNiwango {
     targetCanvas.width = 1920;
     targetCanvas.height = 1080;
     const comments = formattedComments.map(
-      (comment) => new CommentMapper(comment)
+      (comment) => new CommentMapper(comment),
     );
     this.niwango = new niwango(targetCanvas, comments);
   }
@@ -17,13 +17,9 @@ class NiconicommentsPluginNiwango {
     this.niwango.draw(vpos, true);
   }
 
-  public clear() {
-    this.niwango.clear();
-  }
-
   public addComments(...formattedComments: IComment[]) {
     const comments = formattedComments.map(
-      (comment) => new CommentMapper(comment)
+      (comment) => new CommentMapper(comment),
     );
     this.niwango.addComments(...comments);
   }
