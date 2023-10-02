@@ -1,6 +1,6 @@
 {
   "name": "@xpadev-net/niconicomments-plugin-niwango",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "niwango plugin for niconicomments",
   "main": "dist/bundle.js",
   "types": "dist/dts/types.d.ts",
