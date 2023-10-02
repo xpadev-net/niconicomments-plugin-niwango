@@ -17,7 +17,7 @@ class NiconicommentsPluginNiwango {
     this.niwango.draw(vpos, true);
   }
 
-  public addComments(...formattedComments: IComment[]) {
+  public addComments(formattedComments: IComment[]) {
     const comments = formattedComments.map(
       (comment) => new CommentMapper(comment),
     );

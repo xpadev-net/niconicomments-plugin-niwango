@@ -1,6 +1,8 @@
 import { IComment } from "@/@types/types";
 import { colors } from "@/utils/colors";
 import { color2number } from "@/utils/number2color";
+import { UUID } from "@/@types/brands";
+import { addComment, getComment } from "@/context";
 
 const size2number = {
   small: 2,
@@ -9,53 +11,54 @@ const size2number = {
 };
 
 class CommentMapper {
-  public comment: IComment;
   private _color: number;
+  private _id: UUID;
   constructor(comment: IComment) {
-    this.comment = comment;
+    this._id = addComment(comment);
     this._color = this._parseColor();
   }
 
   get message() {
-    return this.comment.content;
+    return getComment(this._id).content;
   }
   set message(val: string) {
-    this.comment.content = val;
+    getComment(this._id).content = val;
   }
 
   get vpos() {
-    return this.comment.vpos / 100;
+    return getComment(this._id).vpos / 100;
   }
   set vpos(val: number) {
-    this.comment.vpos = Math.floor(val * 100);
+    getComment(this._id).vpos = Math.floor(val * 100);
   }
 
   get _vpos() {
-    return this.comment.vpos + (this.comment.comment.button ? 1 : 0);
+    const comment = getComment(this._id);
+    return comment.vpos + (comment.comment.button ? 1 : 0);
   }
 
   get _owner() {
-    return this.comment.owner;
+    return getComment(this._id).owner;
   }
 
   get isYourPost() {
-    return this.comment.comment.is_my_post;
+    return getComment(this._id).comment.is_my_post;
   }
 
   get mail() {
-    return this.comment.mail.join(" ");
+    return getComment(this._id).mail.join(" ");
   }
   set mail(val: string) {
-    this.comment.mail = val.split(/\s+/g);
+    getComment(this._id).mail = val.split(/\s+/g);
     this._color = this._parseColor();
   }
 
   get fromButton() {
-    return this.comment.mail.includes("from_button");
+    return getComment(this._id).mail.includes("from_button");
   }
 
   get isPremium() {
-    return this.comment.comment.premium;
+    return getComment(this._id).comment.premium;
   }
 
   get color() {
@@ -66,21 +69,21 @@ class CommentMapper {
   }
 
   get size() {
-    return size2number[this.comment.comment.size];
+    return size2number[getComment(this._id).comment.size];
   }
 
   get no() {
-    return this.comment.comment.id;
+    return getComment(this._id).comment.id;
   }
 
   private _parseColor() {
-    for (const command of this.comment.mail) {
+    for (const command of getComment(this._id).mail) {
       const color = colors[command];
       if (color) {
         return color2number(color);
       }
       const colorCode = command.match(/^#(?:[0-9a-z]{3}|[0-9a-z]{6})$/);
-      if (colorCode && this.comment.comment.premium) {
+      if (colorCode && getComment(this._id).comment.premium) {
         return color2number(colorCode[0]);
       }
     }
