@@ -31,7 +31,7 @@ class CommentMapper {
   }
 
   get _vpos() {
-    return this.comment.vpos;
+    return this.comment.vpos + (this.comment.comment.button ? 1 : 0);
   }
 
   get _owner() {
