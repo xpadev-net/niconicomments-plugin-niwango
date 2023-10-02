@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-const processDir = (dir = "./dist/dist/dts", deps = 0) => {
+const processDir = (dir = "./dist/dts", deps = 0) => {
   const files = fs.readdirSync(dir);
   for (const item of files) {
     const path = `${dir}/${item}`;
