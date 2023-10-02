@@ -20,6 +20,13 @@ class NiconicommentsPluginNiwango {
   public clear() {
     this.niwango.clear();
   }
+
+  public addComments(...formattedComments: IComment[]) {
+    const comments = formattedComments.map(
+      (comment) => new CommentMapper(comment)
+    );
+    this.niwango.addComments(...comments);
+  }
 }
 
 const wrapper = (_niwango: typeof Niwango) => {

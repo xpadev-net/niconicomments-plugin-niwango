@@ -78,4 +78,5 @@ export declare class Niwango {
   );
   draw(vpos: number, clear: boolean): void;
   clear(): void;
+  addComments(...newComments: CommentMapper[]): void;
 }
