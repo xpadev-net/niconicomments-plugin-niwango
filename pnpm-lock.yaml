@@ -35,6 +35,9 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^6.7.3
     version: 6.7.3(eslint@8.50.0)(typescript@5.2.2)
+  '@xpadev-net/niconicomments':
+    specifier: ^0.2.65
+    version: 0.2.65
   copyfiles:
     specifier: ^2.4.1
     version: 2.4.1
@@ -2054,6 +2057,10 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.7.3
       eslint-visitor-keys: 3.4.3
+    dev: true
+
+  /@xpadev-net/niconicomments@0.2.65:
+    resolution: {integrity: sha512-noJvWwvthOTEJuc5kPkRFydGi/dReNG+cdPVpTBT2HkeN2OlqFsh8wiGqtneUWqhEQC8VxRCaGavyURRFy8C1A==}
     dev: true
 
   /abab@2.0.6:
