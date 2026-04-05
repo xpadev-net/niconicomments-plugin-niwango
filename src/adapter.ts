@@ -1,8 +1,8 @@
-import { IComment } from "@/@types/types";
+import type { UUID } from "@/@types/brands";
+import type { IComment } from "@/@types/types";
+import { addComment, getComment } from "@/context";
 import { colors } from "@/utils/colors";
 import { color2number } from "@/utils/number2color";
-import { UUID } from "@/@types/brands";
-import { addComment, getComment } from "@/context";
 
 const size2number = {
   small: 2,
