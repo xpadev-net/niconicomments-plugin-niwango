@@ -1,6 +1,6 @@
-import { IComment } from "@/@types/types";
+import type { IComment } from "@/@types/types";
 import { uuid } from "@/utils/uuid";
-import { UUID } from "./@types/brands";
+import type { UUID } from "./@types/brands";
 
 let comments: { [key: UUID]: IComment } = {};
 
@@ -16,4 +16,4 @@ const getComment = (id: UUID) => {
   return val;
 };
 
-export { resetComments, addComment, getComment };
+export { addComment, getComment, resetComments };

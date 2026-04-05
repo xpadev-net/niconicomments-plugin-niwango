@@ -1,6 +1,6 @@
-import { IComment, Niwango } from "@/@types/types";
+import type { IRenderer } from "@xpadev-net/niconicomments";
+import type { IComment, Niwango } from "@/@types/types";
 import { CommentMapper } from "@/adapter";
-import { IRenderer } from "@xpadev-net/niconicomments";
 
 let niwango: typeof Niwango;
 
