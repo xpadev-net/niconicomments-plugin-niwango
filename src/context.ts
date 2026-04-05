@@ -1,6 +1,6 @@
+import type { UUID } from "@/@types/brands";
 import type { IComment } from "@/@types/types";
 import { uuid } from "@/utils/uuid";
-import type { UUID } from "./@types/brands";
 
 let comments: { [key: UUID]: IComment } = {};
 

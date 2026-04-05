@@ -5,4 +5,5 @@ pre-commit:
       run: npx @biomejs/biome check --staged --write --no-errors-on-unmatched --colors=off
       stage_fixed: true
     check-types:
+      glob: "src/**/*.{ts,tsx}"
       run: npx tsc --noEmit --jsx react
