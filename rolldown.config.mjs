@@ -20,7 +20,10 @@ export default defineConfig({
   },
   plugins: [
     babel({
-      presets: ["@babel/preset-typescript", "@babel/preset-env"],
+      presets: [
+        "@babel/preset-typescript",
+        ["@babel/preset-env", { modules: false }],
+      ],
     }),
   ],
 });
