@@ -34,7 +34,7 @@
     "lefthook": "^2.1.4",
     "peggy": "^3.0.2",
     "rimraf": "^5.0.5",
-    "rolldown": "^1.0.0-rc.12",
+    "rolldown": "1.0.0-rc.12",
     "rolldown-plugin-dts": "^0.23.2",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
